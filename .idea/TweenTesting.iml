@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="createjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="createjs-lib-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="easeljs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="preloadjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="soundjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="tween.js-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="tweenjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="react-DefinitelyTyped" level="application" />
+  </component>
+</module>
