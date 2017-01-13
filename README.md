@@ -1,1 +1,1 @@
-# tween-testing
+Some animation samples using CreateJS.
