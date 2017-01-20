@@ -72,7 +72,7 @@ const swingSimulation = () => {
  */
 const clickParticle = (e) => {
   stage.removeChild(dot);
-  let color = colors.splice(Math.floor(Math.random()*colors.length), 1);    //TODO: We have a total of 21 icons
+  let color = colors.splice(Math.floor(Math.random()*colors.length), 1);    //TODO: Find a way to build a good logic for the blank hit?
 
   let redDot = new createjs.Graphics().beginFill('#FF0000').drawCircle(0, 0, 10);
   dot = new createjs.Shape(redDot);
@@ -114,6 +114,7 @@ const clickParticle = (e) => {
       .to({x: 40, y: 270}, 400);
     stage.addChild(objDraw);
   }
+
   console.log('Stage X: ' + e.stageX + ' Stage Y: ' + e.stageY);
   clicks++;
   console.log(clicks);
@@ -121,11 +122,14 @@ const clickParticle = (e) => {
 
 /**
  * Eventually to be used for the Pinata side feature?
+ * TODO: Actually in the pinata game the feature must go from full to empty. Must be refactored.
+ * UPDATE: The animation now looks like it's going from full to empty. Maybe find a better way?
  */
 const loadingBar = () => {
   loaderBar = new createjs.Shape();
   loaderBar.x = window.innerWidth - 100;
   loaderBar.y = window.innerHeight - 500;
+  // loaderBar.scaleY = -1;
   loaderBar.graphics.setStrokeStyle(2);
   loaderBar.graphics.beginStroke("#00f");
   loaderBar.graphics.drawRect(20, 20, 40, 400);
@@ -138,7 +142,10 @@ const loadingBar = () => {
  */
 const updateLoadingBar = () => {
   loaderBar.graphics.clear();
-  loaderBar.graphics.beginFill('#00ff00');
+  loaderBar.graphics.beginFill('#771e08');
+  loaderBar.graphics.drawRect(20, 20, 40, 400);
+  loaderBar.graphics.endFill();
+  loaderBar.graphics.beginFill('#000000');
   loaderBar.graphics.drawRect(20, 20, 40, 400 * percentLoaded);
   loaderBar.graphics.endFill();
   loaderBar.graphics.setStrokeStyle(2);
@@ -154,10 +161,9 @@ const startLoad = () => {
 const updateLoad = () => {
   percentLoaded += .0005;
   updateLoadingBar();
-
+  console.log(percentLoaded);
   if (percentLoaded >= 1) {
     clearInterval(loadInterval);
-    //stage.removeChild(loaderBar);
   }
 };
 
